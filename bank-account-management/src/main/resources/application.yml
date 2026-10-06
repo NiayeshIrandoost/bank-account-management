@@ -1,0 +1,18 @@
+micronaut:
+  application:
+    name: bank-account-management
+
+datasources:
+  default:
+    url: ${DB_URL}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    schema-generate: NONE
+    dialect: POSTGRES
+
+logging:
+  levels:
+    root: INFO
+    io.micronaut: INFO
+    ir.pep: DEBUG
