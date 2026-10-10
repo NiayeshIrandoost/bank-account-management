@@ -143,11 +143,12 @@
           <jdbcUser>${jdbcUser}</jdbcUser>
           <jdbcPassword>${jdbcPassword}</jdbcPassword>
           <schemaPattern>public</schemaPattern>
+          <exportForeignKeys>false</exportForeignKeys>
 
 <!--          <tableNamePattern>card,transaction</tableNamePattern>-->
-          <tableNamePattern>%card%,%transaction%</tableNamePattern>
+          <tableNamePattern>%nia_card%,%nia_transaction%</tableNamePattern>
 
-          <packageName>ir.pep.account.querydsl.model</packageName>
+          <packageName>ir.pep.account.querydsl</packageName>
           <targetFolder>${project.basedir}/src/main/java</targetFolder>
 
           <customTypes>
