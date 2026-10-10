@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 import java.util.List;
 import java.util.Optional;
 
-import static ir.pep.account.querydsl.model.QNiaCard.niaCard;
+import static ir.pep.account.querydsl.QNiaCard.niaCard;
 
 @Singleton
 public class CardRepositoryImpl implements CardRepository {

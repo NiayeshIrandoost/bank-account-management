@@ -35,6 +35,33 @@ public class CardController {
         return HttpResponse.ok(card);
     }
 
+    @Get("/active")
+    public HttpResponse<List<CardResponseDto>> getAllActive(){
+        List<CardResponseDto> activeCards = cardService.getAllActive();
+        return HttpResponse.ok(activeCards);
+    }
+
+    @Put("/{id}")
+    public HttpResponse<Void> update(@PathVariable String id , @Body CardRequestDto dto){
+        dto.setId(id);
+        cardService.update(dto);
+        return HttpResponse.noContent();
+    }
+
+    @Patch("/{id}/status")
+    public HttpResponse<Void> updateStatus(@PathVariable String id , @QueryValue boolean enabled){
+        cardService.updateStatus(id, enabled);
+        return HttpResponse.noContent();
+    }
+
+    @Patch("/{id}/card-number")
+    public HttpResponse<Void> updateCardNumber(@PathVariable String id,@QueryValue String cardNumber){
+        cardService.updateCardNumber(id, cardNumber);
+        return HttpResponse.noContent();
+    }
+
+
+
     @Delete("/{id}")
     public HttpResponse<Void> delete(@PathVariable String id){
         cardService.delete(id);
